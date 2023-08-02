@@ -1,55 +1,53 @@
 <template>
-  <div class="main-page">
-    <div>{{ msg }}</div>
-    <el-row gutter="50">
-      <el-col span="12">
-        <el-card>
-          <div slot="header" class="card-header">
-            {{ catalog[0].title }}
-            <el-button @click="clickTitle()"></el-button>
-          </div>
-          <div class="content">
-            <div v-for="(article, i) in catalog[0].articles" :key="i">{{ title }}</div>
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
-    <el-row gutter="50">
-      <el-col span="12">
-        <el-card>
-          <div slot="header" class="card-header">
-            {{ catalog[1].title }}
-          </div>
-          <div class="content">
-            <div v-for="(article, i) in catalog[0].articles" :key="i">{{ title }}</div>
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
-    <el-row gutter="50">
-      <el-col span="12">
-        <el-card>
-          <div slot="header" class="card-header">
-            {{ catalog[2].title }}
-          </div>
-          <div class="content">
-            <div v-for="(article, i) in catalog[0].articles" :key="i">{{ title }}</div>
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
-    <el-row gutter="50">
-      <el-col span="12">
-        <el-card>
-          <div slot="header" class="card-header">
-            {{ catalog[3].title }}
-          </div>
-          <div class="content">
-            <div v-for="(article, i) in catalog[0].articles" :key="i">{{ title }}</div>
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
+  <div class="root">
+    <div class="main-page">
+      <div>{{ msg }}</div>
+      <el-row :gutter="50">
+        <el-col :span="12">
+          <el-card>
+            <div slot="header" class="card-header">
+              {{ catalog[0].title }}
+              <el-button @click="clickTitle()"></el-button>
+            </div>
+            <div class="content">
+              <div v-for="(article, i) in catalog[0].articles" :key="i">{{ article.title }}</div>
+            </div>
+          </el-card>
+        </el-col>
+        <el-col :span="12">
+          <el-card>
+            <div slot="header" class="card-header">
+              {{ catalog[1].title }}
+            </div>
+            <div class="content">
+              <div v-for="(article, i) in catalog[0].articles" :key="i">{{ article.title }}</div>
+            </div>
+          </el-card>
+        </el-col>
+      </el-row>
+      <el-row :gutter="50">
+        <el-col :span="12">
+          <el-card>
+            <div slot="header" class="card-header">
+              {{ catalog[2].title }}
+            </div>
+            <div class="content">
+              <div v-for="(article, i) in catalog[0].articles" :key="i">{{ article.title }}</div>
+            </div>
+          </el-card>
+        </el-col>
+        <el-col :span="12">
+          <el-card>
+            <div slot="header" class="card-header">
+              {{ catalog[3].title }}
+            </div>
+            <div class="content">
+              <div v-for="(article, i) in catalog[0].articles" :key="i">{{ article.title }}</div>
+            </div>
+          </el-card>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
@@ -119,5 +117,8 @@ export default {
   margin: 20px;
   border: 1px solid;
   padding: 30px;
+}
+.content {
+  border: 1px 0 1px 0 solid;
 }
 </style>
